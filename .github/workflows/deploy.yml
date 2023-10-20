@@ -33,4 +33,4 @@ jobs:
           aws-region: us-east-2
 
       - name: Copy S3 Files
-        run: aws s3 cp build/ s3://spa-example-staging –recursive
+        run: aws s3 cp dist/ s3://spa-example-staging –recursive

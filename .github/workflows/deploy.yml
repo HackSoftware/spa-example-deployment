@@ -34,3 +34,6 @@ jobs:
 
       - name: Copy S3 Files
         run: aws s3 cp dist/ s3://spa-example-staging --recursive
+
+      - name: Invalidate CloudFront Distribution
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
